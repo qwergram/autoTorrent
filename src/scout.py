@@ -57,8 +57,9 @@ class Scout(object):
     ]
     _HTML_PARSER = _DummyXMLParser()
 
-    def __init__(self, queries=None):
+    def __init__(self, queries=None, blacklist=None):
         self.queries = queries if queries else []
+        self.blacklist = blacklist if blacklist else []
         self.torrentPool = []
 
     def _grabTorrentPool(self):
